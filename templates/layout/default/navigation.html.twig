@@ -1,0 +1,11 @@
+<nav>
+    <a href="{{ path('app_home')}}">Accueil</a>
+    {% if app.user %}
+        {% if 'ROLE_ADMIN' in app.user.roles %}
+            <a href="{{ path('app_admin')}}">Administration</a>
+        {% endif %}
+        <a href="{{ path('app_logout')}}">Déconnexion</a>
+    {% else %}
+        <a href="{{ path('app_login')}}">Connexion</a>
+    {% endif %}
+</nav>
