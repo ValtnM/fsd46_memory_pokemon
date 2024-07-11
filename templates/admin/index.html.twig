@@ -5,4 +5,15 @@
 {% block main %}
     <h1>Administration</h1>
     <button>Mise à jour des pokémons</button>
+    <section>
+
+        {% for pokemon in pokemons  %}
+            <article>
+                <img src="{{ pokemon.image }}" alt="{{ pokemon.name }}">
+                <h2>{{ pokemon.name }}</h2>
+                <p>Évolution {{ pokemon.evolution ? pokemon.evolution : }}</p>
+
+            </article>
+        {% endfor %}
+    </section>
 {% endblock %}
