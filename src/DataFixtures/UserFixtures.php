@@ -18,11 +18,17 @@ class UserFixtures extends Fixture
 
     public function load(ObjectManager $manager): void
     {
-        $user = new User();
-        $user->setEmail('john.doe@example.fr')
-        ->setPassword($this->hasher->hashPassword($user, "password"))
+        $user1 = new User();
+        $user1->setEmail('john.doe@example.fr')
+        ->setPassword($this->hasher->hashPassword($user1, "password"))
         ->setRoles(['ROLE_USER']);
-        $manager->persist($user);
+        $manager->persist($user1);
+
+        $user2 = new User();
+        $user2->setEmail('admin@example.fr')
+        ->setPassword($this->hasher->hashPassword($user2, "admin"))
+        ->setRoles(['ROLE_USER', 'ROLE_ADMIN']);
+        $manager->persist($user2);
 
         $manager->flush();
     }
