@@ -15,11 +15,14 @@
 
             {% for pokemon in pokemons  %}
                 <article>
-                    <img src="{{ pokemon.image }}" alt="{{ pokemon.name }}">
-                    <h2>{{ pokemon.name }}</h2>
-                    <p>Évolution {{ pokemon.evolution ? pokemon.evolution : ""}}</p>
-    
+                    <div class="content">
+                        <img src="{{ pokemon.image }}" alt="{{ pokemon.name }}">
+                        <h2>{{ pokemon.name }}</h2>
+                        <p>Évolution {{ pokemon.evolution ? pokemon.evolution : ""}}</p>
+                        <div class="filter"></div>    
+                    </div>
                 </article>
+
             {% endfor %}
         </section>
     </main>
