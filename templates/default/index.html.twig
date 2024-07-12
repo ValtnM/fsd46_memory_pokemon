@@ -4,6 +4,10 @@
 
 {% block main %}
 <div class="example-wrapper">
-    <h1>Memory Pokémon</h1>   
+    <h1>Memory Pokémon</h1>
+    <p>Choisissez un niveau :</p>  
+    <a href="{{ path('app_play', {level: 'debutant'}) }}">Débutant</a>
+    <a href="{{ path('app_play', {level: 'avance'}) }}">Avancé</a>
+    <a href="{{ path('app_play', {level: 'expert'}) }}">Expert</a>
 </div>
 {% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'layout/default/index.html.twig' %}
+
+{% block title %}Memory Pokémon - {{ level }}{% endblock %}
+
+{% block main %}
+    <main>
+
+        <h1>Memory Pokémon</h1>
+        <p>Choisissez un niveau :</p>  
+        <a href="{{ path('app_play', {level: 'debutant'}) }}">Débutant</a>
+        <a href="{{ path('app_play', {level: 'avance'}) }}">Avancé</a>
+        <a href="{{ path('app_play', {level: 'expert'}) }}">Expert</a>
+
+        <section class="pokemon-list">
+
+            {% for pokemon in pokemons  %}
+                <article>
+                    <img src="{{ pokemon.image }}" alt="{{ pokemon.name }}">
+                    <h2>{{ pokemon.name }}</h2>
+                    <p>Évolution {{ pokemon.evolution ? pokemon.evolution : ""}}</p>
+    
+                </article>
+            {% endfor %}
+        </section>
+    </main>
+{% endblock %}
