@@ -1,0 +1,18 @@
+.pokemon-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    article {
+        width: 20%;
+        border: 2px black solid;
+        padding: 0.5rem;
+        margin: 1rem;
+        text-align: center;
+        background: #b62121;
+        
+        img {
+            width: 10rem;
+        }
+    }
+}
